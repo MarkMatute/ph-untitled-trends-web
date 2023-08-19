@@ -1,0 +1,8 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "ignorePath": ".gitignore",
+  "ignore": [
+    "*.css"
+  ]
+}
