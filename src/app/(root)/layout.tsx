@@ -26,7 +26,7 @@ function AuthRootLayout(props: AuthRootLayoutProps) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} bg-dark2`}>
+        <body className={`${inter.className} bg-dark-2`}>
           <Topbar />
 
           <main className="flex flex-row">

@@ -3,6 +3,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
+import { dark } from '@clerk/themes';
 
 export const metadata: Metadata = {
   title: 'PH Untitled Trends',
@@ -20,9 +21,17 @@ const inter = Inter({
 function AuthRootLayout(props: AuthRootLayoutProps) {
   const { children } = props;
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <html lang="en">
-        <body className={`${inter.className} bg-dark2`}>{children}</body>
+        <body className={`${inter.className} bg-dark-1`}>
+          <div className="w-full flex justify-center items-center min-h-screen">
+            {children}
+          </div>
+        </body>
       </html>
     </ClerkProvider>
   );
