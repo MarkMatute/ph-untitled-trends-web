@@ -1,9 +1,10 @@
 import '../globals.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
 import { dark } from '@clerk/themes';
+import { connectToDatabase } from '../../lib/mongoose';
 
 export const metadata: Metadata = {
   title: 'PH Untitled Trends',
@@ -20,6 +21,11 @@ const inter = Inter({
 
 function AuthRootLayout(props: AuthRootLayoutProps) {
   const { children } = props;
+
+  useEffect(() => {
+    connectToDatabase();
+  }, []);
+
   return (
     <ClerkProvider
       appearance={{
